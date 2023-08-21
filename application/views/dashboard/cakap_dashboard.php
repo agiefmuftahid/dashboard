@@ -765,7 +765,7 @@
                                                     <div class="col">
                                                         <p class="font-sans-serif lh-1 mb-1 fs-5" id="persentase_perkara_banding_diselesaikan_tepat_waktu"></p>
                                                         <span class="badge badge-subtle-success rounded-pill">
-                                                            <a href="" style="text-decoration: none;">Lihat Data</a>
+                                                            <a style="text-decoration: none;cursor: pointer" onclick="detail_data_banding()" id="detail_persentase_perkara_banding_diselesaikan_tepat_waktu">Lihat Data</a>
                                                             <!-- <span class="badge badge-subtle-success rounded-pill"> -->
                                                             <!-- <span class="fas fa-caret-up me-1"></span>3.5%</span> -->
                                                     </div>
@@ -789,7 +789,7 @@
                                                     <div class="col">
                                                         <p class="font-sans-serif lh-1 mb-1 fs-5" id="persentase_banding_pidana_tidak_kasasi"></p>
                                                         <span class="badge badge-subtle-success rounded-pill">
-                                                            <a href="" style="text-decoration: none;">Lihat Data</a>
+                                                            <a style="text-decoration: none;cursor: pointer" onclick="detail_data_banding()" id="detail_persentase_banding_pidana_tidak_kasasi">Lihat Data</a>
                                                             <!-- <span class="badge badge-subtle-success rounded-pill"> -->
                                                             <!-- <span class="fas fa-caret-up me-1"></span>3.5%</span> -->
                                                     </div>
@@ -813,7 +813,7 @@
                                                     <div class="col">
                                                         <p class="font-sans-serif lh-1 mb-1 fs-5" id="persentase_banding_pidana_tipikor_tidak_kasasi"></p>
                                                         <span class="badge badge-subtle-success rounded-pill">
-                                                            <a href="" style="text-decoration: none;">Lihat Data</a>
+                                                            <a style="text-decoration: none;cursor: pointer" onclick="detail_data_banding()" id="detail_persentase_banding_pidana_tipikor_tidak_kasasi">Lihat Data</a>
                                                             <!-- <span class="badge badge-subtle-success rounded-pill"> -->
                                                             <!-- <span class="fas fa-caret-up me-1"></span>3.5%</span> -->
                                                     </div>
@@ -837,7 +837,7 @@
                                                     <div class="col">
                                                         <p class="font-sans-serif lh-1 mb-1 fs-5" id="persentase_banding_perdata_tidak_kasasi"></p>
                                                         <span class="badge badge-subtle-success rounded-pill">
-                                                            <a href="" style="text-decoration: none;">Lihat Data</a>
+                                                            <a style="text-decoration: none;cursor: pointer" onclick="detail_data_banding()" id="detail_persentase_banding_perdata_tidak_kasasi">Lihat Data</a>
                                                             <!-- <span class="badge badge-subtle-success rounded-pill"> -->
                                                             <!-- <span class="fas fa-caret-up me-1"></span>3.5%</span> -->
                                                     </div>
@@ -1712,7 +1712,6 @@
                 </div>
             </div>
         </div>
-        </div>
     </main>
     <!-- ===============================================-->
     <!--    End of Main Content-->
@@ -1737,8 +1736,15 @@
     <script src="<?php echo base_url() ?>assets/js/theme.js"></script>
 
     <script type="text/javascript">
+        function detail_data_banding() {
+            var btn_id = event.target.id;
+            let tahun = $('#tahun').val();
+            window.location = '<?php echo base_url() ?>detail_data_banding_cakap/' + tahun + '/' + btn_id;
+        }
+
         $(document).ready(() => {
             let tahun = $('#tahun').val();
+
             return new Promise((resolve, reject) => {
                 $.ajax({
                     url: '<?php echo base_url() ?>get_data_cakap/' + tahun,
@@ -1756,6 +1762,7 @@
                                 } else if (data.data[index].jenis == 'persentase_perkara_banding_diselesaikan_tepat_waktu') {
                                     $('#persentase_perkara_banding_diselesaikan_tepat_waktu').append(data.data[index].value);
                                     $('#chart_count_persentase_perkara_banding_diselesaikan_tepat_waktu').append(data.data[index].value);
+                                    $('#detail_persentase_perkara_banding_diselesaikan_tepat_waktu').attr('id', data.data[index].id_statistik);
                                 } else if (data.data[index].jenis == 'total_perkara_banding_diselesaikan_tepat_waktu') {
                                     var total_perkara_banding_diselesaikan_tepat_waktu = data.data[index].value;
                                 } else if (data.data[index].jenis == 'total_perkara_banding_diselesaikan_tidak_tepat_waktu') {
@@ -1763,6 +1770,7 @@
                                 } else if (data.data[index].jenis == 'persentase_banding_pidana_tidak_kasasi') {
                                     $('#persentase_banding_pidana_tidak_kasasi').append(data.data[index].value);
                                     $('#chart_count_persentase_banding_pidana_tidak_kasasi').append(data.data[index].value);
+                                    $('#detail_persentase_banding_pidana_tidak_kasasi').attr('id', data.data[index].id_statistik);
                                     var persentase_pidana_tidak_kasasi = data.data[index].value;
                                 } else if (data.data[index].jenis == 'total_banding_pidana_tidak_kasasi') {
                                     var total_pidana_tidak_kasasi = data.data[index].value;
@@ -1771,6 +1779,7 @@
                                 } else if (data.data[index].jenis == 'persentase_banding_pidana_tipikor_tidak_kasasi') {
                                     $('#persentase_banding_pidana_tipikor_tidak_kasasi').append(data.data[index].value);
                                     $('#chart_count_persentase_banding_pidana_tipikor_tidak_kasasi').append(data.data[index].value);
+                                    $('#detail_persentase_banding_pidana_tipikor_tidak_kasasi').attr('id', data.data[index].id_statistik);
                                     var persentase_pidana_tipikor_tidak_kasasi = data.data[index].value;
                                 } else if (data.data[index].jenis == 'total_banding_pidana_tipikor_tidak_kasasi') {
                                     var total_pidana_tipikor_tidak_kasasi = data.data[index].value;
@@ -1779,6 +1788,7 @@
                                 } else if (data.data[index].jenis == 'persentase_banding_perdata_tidak_kasasi') {
                                     $('#persentase_banding_perdata_tidak_kasasi').append(data.data[index].value);
                                     $('#chart_count_persentase_banding_perdata_tidak_kasasi').append(data.data[index].value);
+                                    $('#detail_persentase_banding_perdata_tidak_kasasi').attr('id', data.data[index].id_statistik);
                                     var persentase_perdata_tidak_kasasi = data.data[index].value;
                                 } else if (data.data[index].jenis == 'total_banding_perdata_tidak_kasasi') {
                                     var total_perdata_tidak_kasasi = data.data[index].value;

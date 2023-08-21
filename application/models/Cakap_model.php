@@ -25,10 +25,13 @@ class Cakap_model extends CI_Model
         return $this->db->count_all_results('statistik_cakap_banding');
     }
 
-    public function get_statistik_cakap_banding($tahun)
+    public function get_statistik_cakap_banding($tahun, $id_statistik = false)
     {
         $this->db->select('*');
         $this->db->where('tahun', $tahun);
+        if ($id_statistik) {
+            $this->db->where('id_statistik', $id_statistik);
+        }
         $this->db->from('statistik_cakap_banding');
         $query = $this->db->get();
 

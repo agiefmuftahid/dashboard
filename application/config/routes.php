@@ -54,3 +54,5 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['get_data_cakap/(:any)'] = 'cakap/get_data/$1';
+$route['get_data_cakap/(:any)/(:any)'] = 'cakap/get_data/$1/$2';
+$route['detail_data_banding_cakap/(:any)/(:any)'] = 'cakap/detail_data_banding/$1/$2';
