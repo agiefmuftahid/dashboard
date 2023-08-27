@@ -631,8 +631,8 @@
                                     <div class="col">
                                         <p class="font-sans-serif lh-1 mb-1 fs-4" id="total_perkara_tahun_ini"></p><span class="badge badge-subtle-success rounded-pill fs--2">13.6%</span>
                                     </div>
-                                    <div class="col-auto ps-0">
-                                        <div class="echart-bar-weekly-sales h-100"></div>
+                                    <div class="col-auto ps-0 mt-n4">
+                                        <div class="echart-default-total-order" data-echarts='{"tooltip":{"trigger":"axis","formatter":"{b0} : {c0}"},"xAxis":{"data":["Week 4","Week 5","Week 6","Week 7"]},"series":[{"type":"line","data":[20,40,100,120],"smooth":true,"lineStyle":{"width":3}}],"grid":{"bottom":"2%","top":"2%","right":"10px","left":"10px"}}' data-echart-responsive="true"></div>
                                     </div>
                                 </div>
                             </div>
@@ -858,7 +858,7 @@
                     <div class="col-xxl-6 col-xl-12">
                         <div class="card">
                             <div class="card-header d-flex flex-between-center py-2 border-bottom">
-                                <h6 class="mb-0">Most Leads</h6>
+                                <h6 class="mb-0">Rasio Perkara Banding Minutasi</h6>
                                 <div class="dropdown font-sans-serif btn-reveal-trigger">
                                     <button class="btn btn-link text-600 btn-sm dropdown-toggle dropdown-caret-none btn-reveal" type="button" id="dropdown-most-leads" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false">
                                         <span class="fas fa-ellipsis-h fs--2"></span>
@@ -874,16 +874,8 @@
                                 <div class="row align-items-center">
                                     <div class="col-md-5 col-xxl-12 mb-xxl-1">
                                         <div class="position-relative">
-                                            <!-- Find the JS file for the following chart at: src/js/charts/echarts/most-leads.js-->
-                                            <!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js-->
-                                            <div class="echart-most-leads my-2" data-echart-responsive="true"></div>
-                                            <div class="position-absolute top-50 start-50 translate-middle text-center">
-                                                <p class="fs--1 mb-0 text-400 font-sans-serif fw-medium">
-                                                    Total
-                                                </p>
-                                                <p class="fs-3 mb-0 font-sans-serif fw-medium mt-n2">
-                                                    15.6k
-                                                </p>
+                                            <div style="width:50%;display:flex;align-items:center;justify-content:center;margin-left:100px;">
+                                                <canvas style="display: block; box-sizing: border-box; height: 20px; width: 50px;" id="chart_persentase_perkara_banding_minutasi" width="100" height="100"></canvas>
                                             </div>
                                         </div>
                                     </div>
@@ -891,54 +883,42 @@
                                         <hr class="mx-nx1 mb-0 d-md-none d-xxl-block" />
                                         <div class="d-flex flex-between-center border-bottom py-3 pt-md-0 pt-xxl-3">
                                             <div class="d-flex">
-                                                <img class="me-2" src="<?php echo base_url() ?>assets/img/crm/email.svg " width="16" height="16" alt="..." />
-                                                <h6 class="text-700 mb-0">Email</h6>
+                                                <span class="far fa-chart-bar me-2 text-primary"></span>
+                                                <h6 class="text-700 mb-0">Total Perkara Banding Minutasi</h6>
                                             </div>
-                                            <p class="fs--1 text-500 mb-0 fw-semi-bold">
+                                            <!-- <p class="fs--1 text-500 mb-0 fw-semi-bold">
                                                 5200 vs 1052
-                                            </p>
-                                            <h6 class="text-700 mb-0">54%</h6>
+                                            </p> -->
+                                            <h6 class="text-700 mb-0" id="total-banding-minutasi-jumlah"></h6>
                                         </div>
                                         <div class="d-flex flex-between-center border-bottom py-3">
                                             <div class="d-flex">
-                                                <img class="me-2" src="<?php echo base_url() ?>assets/img/crm/social.svg " width="16" height="16" alt="..." />
-                                                <h6 class="text-700 mb-0">Social</h6>
+                                                <span class="far fa-chart-bar me-2 text-danger"></span>
+                                                <h6 class="text-700 mb-0">Pidana</h6>
                                             </div>
-                                            <p class="fs--1 text-500 mb-0 fw-semi-bold">
-                                                5623 vs 4929
-                                            </p>
-                                            <h6 class="text-700 mb-0">27%</h6>
+                                            <h6 class="text-700 mb-0" id="total-banding-pidana-minutasi-jumlah"></h6>
                                         </div>
                                         <div class="d-flex flex-between-center border-bottom py-3">
                                             <div class="d-flex">
-                                                <img class="me-2" src="<?php echo base_url() ?>assets/img/crm/call.svg " width="16" height="16" alt="..." />
-                                                <h6 class="text-700 mb-0">Call</h6>
+                                                <span class="far fa-chart-bar me-2 text-success"></span>
+                                                <h6 class="text-700 mb-0">Perdata</h6>
                                             </div>
-                                            <p class="fs--1 text-500 mb-0 fw-semi-bold">
-                                                2535 vs 1486
-                                            </p>
-                                            <h6 class="text-700 mb-0">4%</h6>
+                                            <h6 class="text-700 mb-0" id="total-banding-perdata-minutasi-jumlah"></h6>
                                         </div>
                                         <div class="d-flex flex-between-center border-bottom py-3 border-bottom-0 pb-0">
                                             <div class="d-flex">
-                                                <img class="me-2" src="<?php echo base_url() ?>assets/img/crm/other.svg " width="16" height="16" alt="..." />
-                                                <h6 class="text-700 mb-0">Other</h6>
+                                                <span class="far fa-chart-bar me-2 text-warning"></span>
+                                                <h6 class="text-700 mb-0">Pidana Tipikor</h6>
                                             </div>
-                                            <p class="fs--1 text-500 mb-0 fw-semi-bold">
-                                                256 vs 189
-                                            </p>
-                                            <h6 class="text-700 mb-0">13%</h6>
+                                            <h6 class="text-700 mb-0" id="total-banding-tipikor-minutasi-jumlah"></h6>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer bg-light p-0">
-                                <a class="btn btn-sm btn-link d-block py-2" href="#!">View all<span class="fas fa-chevron-right ms-1 fs--2"></span></a>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row mt-5 mb-3">
+                <!-- <div class="row mt-5 mb-3">
                     <div class="col">
                         <div class="card bg-success">
                             <div class="card-body">
@@ -1649,7 +1629,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <footer class="footer">
                 <div class="row g-0 justify-content-between fs--1 mt-4 mb-3">
@@ -1795,6 +1775,35 @@
                                 } else if (data.data[index].jenis == 'total_banding_perdata_minutasi') {
                                     var total_perdata_minutasi = data.data[index].value;
                                 }
+                            }
+
+                            $('#total-banding-minutasi-jumlah').append(parseInt(total_perdata_minutasi) + parseInt(total_pidana_minutasi) + parseInt(total_pidana_tipikor_minutasi));
+                            $('#total-banding-pidana-minutasi-jumlah').append(parseInt(total_pidana_minutasi));
+                            $('#total-banding-perdata-minutasi-jumlah').append(parseInt(total_perdata_minutasi));
+                            $('#total-banding-tipikor-minutasi-jumlah').append(parseInt(total_pidana_tipikor_minutasi));
+
+                            if (total_perkara_banding_diselesaikan_tepat_waktu >= 0 && total_perkara_banding_diselesaikan_tidak_tepat_waktu >= 0) {
+                                var chart_persentase_perkara_banding_minutasi = new Chart($('#chart_persentase_perkara_banding_minutasi'), {
+                                    type: 'doughnut',
+                                    data: {
+                                        datasets: [{
+                                            labels: [
+                                                'Total Banding Tepat Waktu',
+                                                'Total Banding Tidak Tepat Waktu'
+                                            ],
+                                            data: [total_perdata_minutasi, total_pidana_tipikor_minutasi, total_pidana_minutasi],
+                                            backgroundColor: [
+                                                'rgba(11, 138, 18, 1)',
+                                                'rgba(9, 81, 214, 1)',
+                                                'rgba(153, 22, 196, 1)'
+                                            ],
+                                            borderWidth: 1
+                                        }]
+                                    },
+                                    options: {
+                                        responsive: true
+                                    }
+                                });
                             }
 
                             if (total_perkara_banding_diselesaikan_tepat_waktu >= 0 && total_perkara_banding_diselesaikan_tidak_tepat_waktu >= 0) {
