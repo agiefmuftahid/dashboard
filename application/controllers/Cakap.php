@@ -13,9 +13,17 @@ class Cakap extends CI_Controller
 
     public function index()
     {
+        $tahun_arr = $this->cakap_model->get_tahun_cakap_banding();
+        if ($tahun_arr) {
+            $tahun_opt = '';
+            foreach ($tahun_arr['data'] as $thn) {
+                $tahun_opt .= '<option value="' . $thn->tahun . '">' . $thn->tahun . '</option>';
+            }
+        }
         $data = [
             'menu' => 'dashboard_cakap',
-            'title' => 'Dashboard Cakap'
+            'title' => 'Dashboard Capaian IKU',
+            'tahun' => $tahun_opt
         ];
         $this->load->view('dashboard/cakap_dashboard', $data);
     }
@@ -42,12 +50,12 @@ class Cakap extends CI_Controller
         return $result;
     }
 
-    public function fetch_data()
+    public function fetch_data($tahun = false)
     {
-        $json_curl_data = $this->_curl_data('GET', 'https://cakap.pt-bengkulu.go.id/api/json_banding');
+        $json_curl_data = $this->_curl_data('GET', 'https://cakap.pt-bengkulu.go.id/api/json_banding?tahun=' . $tahun);
         $arr = json_decode($json_curl_data, true);
         if ($arr['status']['st'] != 1) {
-            $response = array('st' => 0, 'msg' => 'Gagal Ambil Data');
+            $response = array('st' => 0, 'msg' => $arr['status']['msg']);
             header("HTTP/1.1 500 Internal Server Error");
             header('Content-Type: application/json; charset=utf-8');
             echo json_encode($response);
@@ -88,6 +96,9 @@ class Cakap extends CI_Controller
             $query = $this->cakap_model->get_statistik_cakap_banding($tahun, $id);
         } else {
             $query = $this->cakap_model->get_statistik_cakap_banding($tahun);
+            $query_min_1 = $this->cakap_model->get_statistik_cakap_banding(intval($tahun) - 1);
+            $query_min_2 = $this->cakap_model->get_statistik_cakap_banding(intval($tahun) - 2);
+            $query_min_3 = $this->cakap_model->get_statistik_cakap_banding(intval($tahun) - 3);
         }
 
 
@@ -147,13 +158,13 @@ class Cakap extends CI_Controller
                 }
                 $query['data'][$i]->id_statistik = base64_encode($this->encrypt->encode($query['data'][$i]->id_statistik));
             }
-            $response = array('st' => 1, 'msg' => 'Berhasil Ambil Data', 'data' => $query['data']);
+            $response = array('st' => 1, 'msg' => 'Berhasil Ambil Data', 'data' => $query['data'], 'data_min_1' => $query_min_1['data'] ? $query_min_1['data'] : null, 'data_min_2' => $query_min_2['data'] ? $query_min_2['data'] : null, 'data_min_3' => $query_min_3['data'] ? $query_min_3['data'] : null, 'tahun_now' => $tahun);
             header("HTTP/1.1 200 OK");
             header('Content-Type: application/json; charset=utf-8');
             echo json_encode($response);
             return 1;
         } else {
-            $response = array('st' => 0, 'msg' => 'Gagal Ambil Data', 'data' => null);
+            $response = array('st' => 0, 'msg' => 'Gagal Ambil Data', 'data' => null, 'data_min_1' => null, 'data_min_2' => null, 'data_min_3' => null);
             header("HTTP/1.1 500 Internal Server Error");
             header('Content-Type: application/json; charset=utf-8');
             echo json_encode($response);
@@ -166,6 +177,8 @@ class Cakap extends CI_Controller
         if ($id) {
             $id_decrypt = intval($this->encrypt->decode(base64_decode($id)));
             $query = $this->cakap_model->get_statistik_cakap_banding($tahun, $id_decrypt);
+            // echo var_dump($query);
+            // die;
         } else {
             $response = array('st' => 0, 'msg' => 'Gagal Ambil Data', 'data' => null);
             header("HTTP/1.1 500 Internal Server Error");
@@ -208,14 +221,31 @@ class Cakap extends CI_Controller
             return 0;
         }
 
+        $tahun_arr = $this->cakap_model->get_tahun_cakap_banding();
+        if ($tahun_arr) {
+            $tahun_opt = '';
+            foreach ($tahun_arr['data'] as $thn) {
+                if ($thn->tahun == $tahun) {
+                    $tahun_opt .= '<option selected value="' . $thn->tahun . '">' . $thn->tahun . '</option>';
+                } else {
+                    $tahun_opt .= '<option value="' . $thn->tahun . '">' . $thn->tahun . '</option>';
+                }
+            }
+        }
+
         $data = [
             'menu' => 'detail_data_banding',
             'title' => 'Detail Data',
             'id_statistik' => $id,
             'thead' => $table_head,
-            'arr_desc_page' => $arr_desc_page
+            'arr_desc_page' => $arr_desc_page,
+            'tahun_opt' => $tahun_opt
         ];
         $this->load->view('detail_data/detail_cakap_banding', $data);
+    }
+
+    private function get_tahun()
+    {
     }
 
     public function get_list_perkara()

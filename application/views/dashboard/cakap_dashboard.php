@@ -81,12 +81,13 @@
 
                         <button class="btn navbar-toggler-humburger-icon navbar-toggler me-1 me-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDoubleTop" aria-controls="navbarDoubleTop" aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
                         <a class="navbar-brand me-1 me-sm-3" href="../index.html">
-                            <div class="d-flex align-items-center"><img class="me-2" src="<?php echo base_url() ?>assets/img/icons/spot-illustrations/falcon.png" alt="" width="40" /><span class="font-sans-serif">falcon</span>
+                            <div class="d-flex align-items-center"><img class="me-2" src="<?php echo base_url() ?>assets/img/icons/spot-illustrations/falcon.png" alt="" width="40" /><span class="font-sans-serif">dashboard</span>
                             </div>
                         </a>
                         <ul class="navbar-nav align-items-center d-none d-lg-block">
                             <li class="nav-item">
-                                <div class="search-box" data-list='{"valueNames":["title"]}'>
+                                <!-- Search Box -->
+                                <!-- <div class="search-box" data-list='{"valueNames":["title"]}'>
                                     <form class="position-relative" data-bs-toggle="search" data-bs-display="static">
                                         <input class="form-control search-input fuzzy-search" type="search" placeholder="Search..." aria-label="Search" />
                                         <span class="fas fa-search search-box-icon"></span>
@@ -192,7 +193,7 @@
                                             <p class="fallback fw-bold fs-1 d-none">No Result Found.</p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </li>
                         </ul>
                         <ul class="navbar-nav navbar-nav-icons ms-auto flex-row align-items-center">
@@ -202,10 +203,6 @@
                                     <label class="mb-0 theme-control-toggle-label theme-control-toggle-light" for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch to light theme"><span class="fas fa-sun fs-0"></span></label>
                                     <label class="mb-0 theme-control-toggle-label theme-control-toggle-dark" for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch to dark theme"><span class="fas fa-moon fs-0"></span></label>
                                 </div>
-                            </li>
-                            <li class="nav-item d-none d-sm-block">
-                                <a class="nav-link px-0 notification-indicator notification-indicator-warning notification-indicator-fill fa-icon-wait" href="../app/e-commerce/shopping-cart.html"><span class="fas fa-shopping-cart" data-fa-transform="shrink-7" style="font-size: 33px;"></span><span class="notification-indicator-number">1</span></a>
-
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link notification-indicator notification-indicator-primary px-0 fa-icon-wait" id="navbarDropdownNotification" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hide-on-body-scroll="data-hide-on-body-scroll"><span class="fas fa-bell" data-fa-transform="shrink-6" style="font-size: 33px;"></span></a>
@@ -407,16 +404,11 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-caret dropdown-caret dropdown-menu-end py-0" aria-labelledby="navbarDropdownUser">
                                     <div class="bg-white dark__bg-1000 rounded-2 py-2">
-                                        <a class="dropdown-item fw-bold text-warning" href="#!"><span class="fas fa-crown me-1"></span><span>Go Pro</span></a>
+                                        <a class="dropdown-item fw-bold text-danger" href="#!"><span class="fas fa-power-off me-1"></span><span>Belum Masuk</span></a>
 
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#!">Set status</a>
-                                        <a class="dropdown-item" href="../pages/user/profile.html">Profile &amp; account</a>
-                                        <a class="dropdown-item" href="#!">Feedback</a>
-
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="../pages/user/settings.html">Settings</a>
-                                        <a class="dropdown-item" href="../pages/authentication/card/logout.html">Logout</a>
+                                        <a class="dropdown-item" href="../pages/user/settings.html">Tentang Kami</a>
+                                        <a class="dropdown-item" href="../pages/authentication/card/logout.html">Masuk</a>
                                     </div>
                                 </div>
                             </li>
@@ -427,39 +419,13 @@
                         <ul class="navbar-nav" data-top-nav-dropdowns="data-top-nav-dropdowns">
                             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dashboards">Dashboard</a>
                                 <div class="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">
-                                    <div class="bg-white dark__bg-1000 rounded-3 py-2"><a class="dropdown-item link-600 fw-medium" href="../index.html">Default</a><a class="dropdown-item link-600 fw-medium" href="../dashboard/analytics.html">Analytics</a><a class="dropdown-item link-600 fw-medium" href="../dashboard/crm.html">CRM</a><a class="dropdown-item link-600 fw-medium" href="../dashboard/e-commerce.html">E commerce</a><a class="dropdown-item link-600 fw-medium" href="../dashboard/lms.html">LMS<span class="badge rounded-pill ms-2 badge-subtle-success">New</span></a><a class="dropdown-item link-600 fw-medium" href="../dashboard/project-management.html">Management</a><a class="dropdown-item link-600 fw-medium" href="../dashboard/saas.html">SaaS</a><a class="dropdown-item link-600 fw-medium" href="../dashboard/support-desk.html">Support desk<span class="badge rounded-pill ms-2 badge-subtle-success">New</span></a>
+                                    <div class="bg-white dark__bg-1000 rounded-3 py-2">
+                                        <a class="dropdown-item link-600 fw-medium" href="#">CAKAP</a><a class="dropdown-item link-600 fw-medium" href="#" style="pointer-events: none;">Kepegawaian<span class="badge rounded-pill ms-2 badge-subtle-danger">Closed</span></a>
+                                        <a class="dropdown-item link-600 fw-medium" href="#" style="pointer-events: none;">Keuangan<span class="badge rounded-pill ms-2 badge-subtle-danger">Closed</span></a>
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="apps">App</a>
-                                <div class="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="apps">
-                                    <div class="card navbar-card-app shadow-none dark__bg-1000">
-                                        <div class="card-body scrollbar max-h-dropdown"><img class="img-dropdown" src="<?php echo base_url() ?>assets/img/icons/spot-illustrations/authentication-corner.png" width="130" alt="" />
-                                            <div class="row">
-                                                <div class="col-6 col-md-4">
-                                                    <div class="nav flex-column"><a class="nav-link py-1 link-600 fw-medium" href="../app/calendar.html">Calendar</a><a class="nav-link py-1 link-600 fw-medium" href="../app/chat.html">Chat</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-learning/trainer-profile.html">Trainer profile</a>
-                                                        <p class="nav-link text-700 mb-0 fw-bold">Social</p><a class="nav-link py-1 link-600 fw-medium" href="../app/kanban.html">Kanban</a><a class="nav-link py-1 link-600 fw-medium" href="../app/social/feed.html">Feed</a><a class="nav-link py-1 link-600 fw-medium" href="../app/social/activity-log.html">Activity log</a><a class="nav-link py-1 link-600 fw-medium" href="../app/social/notifications.html">Notifications</a><a class="nav-link py-1 link-600 fw-medium" href="../app/social/followers.html">Followers</a>
-                                                        <p class="nav-link text-700 mb-0 fw-bold">Support Desk</p><a class="nav-link py-1 link-600 fw-medium" href="../app/support-desk/table-view.html">Table view</a><a class="nav-link py-1 link-600 fw-medium" href="../app/support-desk/card-view.html">Card view</a><a class="nav-link py-1 link-600 fw-medium" href="../app/support-desk/contacts.html">Contacts</a><a class="nav-link py-1 link-600 fw-medium" href="../app/support-desk/contact-details.html">Contact details</a><a class="nav-link py-1 link-600 fw-medium" href="../app/support-desk/tickets-preview.html">Tickets preview</a><a class="nav-link py-1 link-600 fw-medium" href="../app/support-desk/quick-links.html">Quick links</a>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6 col-md-4">
-                                                    <div class="nav flex-column">
-                                                        <p class="nav-link text-700 mb-0 fw-bold">E-Learning</p><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/invoice.html">Invoice</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-learning/course/course-list.html">Course list</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-learning/course/course-grid.html">Course grid</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-learning/course/course-details.html">Course details</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-learning/course/create-a-course.html">Create a course</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-learning/student-overview.html">Student overview</a>
-                                                        <p class="nav-link text-700 mb-0 fw-bold">Events</p><a class="nav-link py-1 link-600 fw-medium" href="../app/events/create-an-event.html">Create an event</a><a class="nav-link py-1 link-600 fw-medium" href="../app/events/event-detail.html">Event detail</a><a class="nav-link py-1 link-600 fw-medium" href="../app/events/event-list.html">Event list</a>
-                                                        <p class="nav-link text-700 mb-0 fw-bold">Email</p><a class="nav-link py-1 link-600 fw-medium" href="../app/email/inbox.html">Inbox</a><a class="nav-link py-1 link-600 fw-medium" href="../app/email/email-detail.html">Email detail</a><a class="nav-link py-1 link-600 fw-medium" href="../app/email/compose.html">Compose</a>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6 col-md-4">
-                                                    <div class="nav flex-column">
-                                                        <p class="nav-link text-700 mb-0 fw-bold">E-Commerce</p><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/product/product-list.html">Product list</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/product/product-grid.html">Product grid</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/product/product-details.html">Product details</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/product/add-product.html">Add product</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/orders/order-list.html">Order list</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/orders/order-details.html">Order details</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/customers.html">Customers</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/customer-details.html">Customer details</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/shopping-cart.html">Shopping cart</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/checkout.html">Checkout</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/billing.html">Billing</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="pagess">Pages</a>
+                            <!-- <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="pagess">Pages</a>
                                 <div class="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="pagess">
                                     <div class="card navbar-card-pages shadow-none dark__bg-1000">
                                         <div class="card-body scrollbar max-h-dropdown"><img class="img-dropdown" src="<?php echo base_url() ?>assets/img/icons/spot-illustrations/authentication-corner.png" width="130" alt="" />
@@ -523,65 +489,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="moduless">Modules</a>
-                                <div class="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="moduless">
-                                    <div class="card navbar-card-components shadow-none dark__bg-1000">
-                                        <div class="card-body scrollbar max-h-dropdown"><img class="img-dropdown" src="<?php echo base_url() ?>assets/img/icons/spot-illustrations/authentication-corner.png" width="130" alt="" />
-                                            <div class="row">
-                                                <div class="col-6 col-xxl-3">
-                                                    <div class="nav flex-column">
-                                                        <p class="nav-link text-700 mb-0 fw-bold">Components</p><a class="nav-link py-1 link-600 fw-medium" href="../modules/icons/feather.html">Feather</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/icons/material-icons.html">Material icons</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/maps/google-map.html">Google map</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/maps/leaflet-map.html">Leaflet map</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/accordion.html">Accordion</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/alerts.html">Alerts</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/anchor.html">Anchor</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/animated-icons.html">Animated icons</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/background.html">Background</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/badges.html">Badges</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/bottom-bar.html">Bottom bar<span class="badge rounded-pill ms-2 badge-subtle-success">New</span></a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/breadcrumbs.html">Breadcrumbs</a>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6 col-xxl-3">
-                                                    <div class="nav flex-column mt-md-4 pt-md-1"><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/buttons.html">Buttons</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/calendar.html">Calendar</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/cards.html">Cards</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/carousel/bootstrap.html">Bootstrap carousel</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/carousel/swiper.html">Swiper</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/collapse.html">Collapse</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/cookie-notice.html">Cookie notice</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/countup.html">Countup</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/draggable.html">Draggable</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/dropdowns.html">Dropdowns</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/jquery-components.html">Jquery<span class="badge rounded-pill ms-2 badge-subtle-success">New</span></a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/list-group.html">List group</a>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6 col-xxl-3">
-                                                    <div class="nav flex-column mt-xxl-4 pt-xxl-1"><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/modals.html">Modals</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/navs-and-tabs/navs.html">Navs</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/navs-and-tabs/navbar.html">Navbar</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/navs-and-tabs/vertical-navbar.html">Navbar vertical</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/navs-and-tabs/top-navbar.html">Top nav</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/navs-and-tabs/double-top-navbar.html">Double top<span class="badge rounded-pill ms-2 badge-subtle-success">New</span></a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/navs-and-tabs/combo-navbar.html">Combo nav</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/navs-and-tabs/tabs.html">Tabs</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/offcanvas.html">Offcanvas</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/pictures/avatar.html">Avatar</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/pictures/images.html">Images</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/pictures/figures.html">Figures</a>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6 col-xxl-3">
-                                                    <div class="nav flex-column mt-xxl-4 pt-xxl-1"><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/pictures/hoverbox.html">Hoverbox</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/pictures/lightbox.html">Lightbox</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/progress-bar.html">Progress bar</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/placeholder.html">Placeholder</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/pagination.html">Pagination</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/popovers.html">Popovers</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/scrollspy.html">Scrollspy</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/search.html">Search</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/spinners.html">Spinners</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-6 col-xxl-3">
-                                                    <div class="nav flex-column">
-                                                        <p class="nav-link text-700 mb-0 fw-bold">Forms</p><a class="nav-link py-1 link-600 fw-medium" href="../modules/forms/basic/form-control.html">Form control</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/forms/basic/input-group.html">Input group</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/forms/basic/select.html">Select</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/forms/basic/checks.html">Checks</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/forms/basic/range.html">Range</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/forms/basic/layout.html">Layout</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/forms/advance/advance-select.html">Advance select</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/forms/advance/date-picker.html">Date picker</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/forms/advance/editor.html">Editor</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/forms/advance/emoji-button.html">Emoji button</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/forms/advance/file-uploader.html">File uploader</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/forms/advance/input-mask.html">Input mask</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/forms/advance/range-slider.html">Range slider</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/forms/advance/rating.html">Rating</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/forms/floating-labels.html">Floating labels</a>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6 col-xxl-3">
-                                                    <div class="nav flex-column">
-                                                        <p class="nav-link text-700 mb-0 fw-bold">Tables</p><a class="nav-link py-1 link-600 fw-medium" href="../modules/forms/wizard.html">Wizard</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/forms/validation.html">Validation</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/tables/basic-tables.html">Basic tables</a>
-                                                        <p class="nav-link text-700 mb-0 fw-bold">Charts</p><a class="nav-link py-1 link-600 fw-medium" href="../modules/tables/advance-tables.html">Advance tables</a>
-                                                        <p class="nav-link text-700 mb-0 fw-bold">ECharts</p><a class="nav-link py-1 link-600 fw-medium" href="../modules/tables/bulk-select.html">Bulk select</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/charts/chartjs.html">Chartjs</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/charts/d3js.html">D3js<span class="badge rounded-pill ms-2 badge-subtle-success">New</span></a><a class="nav-link py-1 link-600 fw-medium" href="../modules/charts/echarts/line-charts.html">Line charts</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/charts/echarts/bar-charts.html">Bar charts</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/charts/echarts/candlestick-charts.html">Candlestick charts</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/charts/echarts/geo-map.html">Geo map</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/charts/echarts/scatter-charts.html">Scatter charts</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/charts/echarts/pie-charts.html">Pie charts</a>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6 col-xxl-3">
-                                                    <div class="nav flex-column">
-                                                        <p class="nav-link text-700 mb-0 fw-bold">Utilities</p><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/timeline.html">Timeline</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/toasts.html">Toasts</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/tooltips.html">Tooltips</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/treeview.html">Treeview</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/typed-text.html">Typed text</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/videos/embed.html">Embed</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/components/videos/plyr.html">Plyr</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/utilities/borders.html">Borders</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/utilities/clearfix.html">Clearfix</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/utilities/colors.html">Colors</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/utilities/colored-links.html">Colored links</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/utilities/display.html">Display</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/utilities/flex.html">Flex</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/utilities/float.html">Float</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/utilities/grid.html">Grid</a>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6 col-xxl-3">
-                                                    <div class="nav flex-column pt-xxl-1">
-                                                        <p class="nav-link text-700 mb-0 fw-bold">Icons</p><a class="nav-link py-1 link-600 fw-medium" href="../modules/charts/echarts/gauge-charts.html">Gauge charts</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/charts/echarts/radar-charts.html">Radar charts</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/charts/echarts/heatmap-charts.html">Heatmap charts</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/charts/echarts/how-to-use.html">How to use</a>
-                                                        <p class="nav-link text-700 mb-0 fw-bold">Maps</p><a class="nav-link py-1 link-600 fw-medium" href="../modules/icons/font-awesome.html">Font awesome</a><a class="nav-link py-1 link-600 fw-medium" href="../modules/icons/bootstrap-icons.html">Bootstrap icons</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="documentations">Documentation</a>
-                                <div class="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="documentations">
-                                    <div class="bg-white dark__bg-1000 rounded-3 py-2"><a class="dropdown-item link-600 fw-medium" href="../documentation/getting-started.html">Getting started</a><a class="dropdown-item link-600 fw-medium" href="../documentation/customization/configuration.html">Configuration</a><a class="dropdown-item link-600 fw-medium" href="../documentation/customization/styling.html">Styling<span class="badge rounded-pill ms-2 badge-subtle-success">Updated</span></a><a class="dropdown-item link-600 fw-medium" href="../documentation/customization/dark-mode.html">Dark mode</a><a class="dropdown-item link-600 fw-medium" href="../documentation/customization/plugin.html">Plugin</a><a class="dropdown-item link-600 fw-medium" href="../documentation/faq.html">Faq</a><a class="dropdown-item link-600 fw-medium" href="../documentation/gulp.html">Gulp</a><a class="dropdown-item link-600 fw-medium" href="../documentation/design-file.html">Design file</a><a class="dropdown-item link-600 fw-medium" href="../changelog.html">Changelog</a>
-                                    </div>
-                                </div>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -608,10 +516,7 @@
                                         </div>
                                         <div class="col-md-auto position-relative">
                                             <select name="tahun" id="tahun" class="form-select form-select-sm">
-                                                <option value="2023">2023</option>
-                                                <option value="2022">2022</option>
-                                                <option value="2021">2021</option>
-                                                <option value="2020">2020</option>
+                                                <?php echo $tahun ?>
                                             </select>
                                         </div>
                                     </form>
@@ -629,10 +534,10 @@
                             <div class="card-body d-flex flex-column justify-content-end">
                                 <div class="row">
                                     <div class="col">
-                                        <p class="font-sans-serif lh-1 mb-1 fs-4" id="total_perkara_tahun_ini"></p><span class="badge badge-subtle-success rounded-pill fs--2">13.6%</span>
+                                        <p class="font-sans-serif lh-1 mb-1 fs-4" id="total_perkara_tahun_ini"></p><span class="badge badge-subtle-success rounded-pill fs--2" id="persentase_peningkatan_perkara_tahun_ini"></span>
                                     </div>
-                                    <div class="col-auto ps-0 mt-n4">
-                                        <div class="echart-default-total-order" data-echarts='{"tooltip":{"trigger":"axis","formatter":"{b0} : {c0}"},"xAxis":{"data":["Week 4","Week 5","Week 6","Week 7"]},"series":[{"type":"line","data":[20,40,100,120],"smooth":true,"lineStyle":{"width":3}}],"grid":{"bottom":"2%","top":"2%","right":"10px","left":"10px"}}' data-echart-responsive="true"></div>
+                                    <div class="col-auto ps-0 mt-n4 ml-n5">
+                                        <div class="echart-default-total-order" id="chart_total_perkara_tahun_ini"></div>
                                     </div>
                                 </div>
                             </div>
@@ -646,10 +551,10 @@
                             <div class="card-body d-flex flex-column justify-content-end">
                                 <div class="row justify-content-between">
                                     <div class="col-auto align-self-end">
-                                        <div class="fs-4 fw-normal font-sans-serif text-700 lh-1 mb-1" id="total_perkara_tahun_lalu"></div><span class="badge rounded-pill fs--2 bg-200 text-primary"><span class="fas fa-caret-up me-1"></span>13.6%</span>
+                                        <div class="fs-4 fw-normal font-sans-serif text-700 lh-1 mb-1" id="total_perkara_tahun_lalu"></div><span class="badge badge-subtle-success rounded-pill fs--2" id="persentase_peningkatan_perkara_tahun_lalu"></span>
                                     </div>
-                                    <div class="col-auto ps-0 mt-n4">
-                                        <div class="echart-default-total-order" data-echarts='{"tooltip":{"trigger":"axis","formatter":"{b0} : {c0}"},"xAxis":{"data":["Week 4","Week 5","Week 6","Week 7"]},"series":[{"type":"line","data":[20,40,100,120],"smooth":true,"lineStyle":{"width":3}}],"grid":{"bottom":"2%","top":"2%","right":"10px","left":"10px"}}' data-echart-responsive="true"></div>
+                                    <div class="col-auto ps-0 mt-n4 ml-n5">
+                                        <div class="echart-default-total-order" id="chart_total_perkara_tahun_lalu"></div>
                                     </div>
                                 </div>
                             </div>
@@ -663,10 +568,10 @@
                             <div class="card-body d-flex flex-column justify-content-end">
                                 <div class="row justify-content-between">
                                     <div class="col-auto align-self-end">
-                                        <div class="fs-4 fw-normal font-sans-serif text-700 lh-1 mb-1" id="persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini"></div><span class="badge rounded-pill fs--2 bg-200 text-primary"><span class="fas fa-caret-up me-1"></span>13.6%</span>
+                                        <div class="fs-4 fw-normal font-sans-serif text-700 lh-1 mb-1" id="persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini"></div><span class="badge badge-subtle-success rounded-pill fs--2" id="persentase_peningkatan_perkara_banding_tahun_lalu_diselesaikan_tahun_ini"></span>
                                     </div>
-                                    <div class="col-auto ps-0 mt-n4">
-                                        <div class="echart-default-total-order" data-echarts='{"tooltip":{"trigger":"axis","formatter":"{b0} : {c0}"},"xAxis":{"data":["Week 4","Week 5","Week 6","Week 7"]},"series":[{"type":"line","data":[20,40,100,120],"smooth":true,"lineStyle":{"width":3}}],"grid":{"bottom":"2%","top":"2%","right":"10px","left":"10px"}}' data-echart-responsive="true"></div>
+                                    <div class="col-auto ps-0 mt-n4 ml-n5">
+                                        <div class="echart-default-total-order" id="chart_persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini"></div>
                                     </div>
                                 </div>
                             </div>
@@ -675,7 +580,7 @@
                 </div>
                 <div class="row g-3 mb-3">
                     <div class="col-xxl-6 col-xl-12">
-                        <div class="row g-3 mb-3">
+                        <!-- <div class="row g-3 mb-3">
                             <div class="col-lg-12">
                                 <div class="card h-100 mb-3">
                                     <div class="bg-holder bg-card" style="background-image: url(../dashboard/assets/img/icons/spot-illustrations/corner-3.png); "></div>
@@ -751,7 +656,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="row g-3">
                             <div class="col-lg-12">
                                 <div class="row g-3">
@@ -770,7 +675,7 @@
                                                             <!-- <span class="fas fa-caret-up me-1"></span>3.5%</span> -->
                                                     </div>
                                                     <div class="col-auto ps-0">
-                                                        <div class="lms-half-doughnut mt-n3 ms-auto">
+                                                        <div class="lms-half-doughnut mt-n3 ms-auto" id="container_canvas_persentase_perkara_banding_diselesaikan_tepat_waktu">
                                                             <canvas style="display: block; box-sizing: border-box; height: 120px; width: 120px;" width="255" height="255" id="chart_persentase_perkara_banding_diselesaikan_tepat_waktu" width="400" height="400"></canvas>
                                                             <p class="mb-0 mt-n5 text-center fs-1 fw-medium" id="chart_count_persentase_perkara_banding_diselesaikan_tepat_waktu"></p>
                                                         </div>
@@ -794,7 +699,7 @@
                                                             <!-- <span class="fas fa-caret-up me-1"></span>3.5%</span> -->
                                                     </div>
                                                     <div class="col-auto ps-0">
-                                                        <div class="lms-half-doughnut mt-n3 ms-auto">
+                                                        <div class="lms-half-doughnut mt-n3 ms-auto" id="container_canvas_persentase_banding_pidana_tidak_kasasi">
                                                             <canvas style="display: block; box-sizing: border-box; height: 120px; width: 120px;" width="255" height="255" id="chart_persentase_banding_pidana_tidak_kasasi" width="400" height="400"></canvas>
                                                             <p class="mb-0 mt-n5 text-center fs-1 fw-medium" id="chart_count_persentase_banding_pidana_tidak_kasasi"></p>
                                                         </div>
@@ -818,7 +723,7 @@
                                                             <!-- <span class="fas fa-caret-up me-1"></span>3.5%</span> -->
                                                     </div>
                                                     <div class="col-auto ps-0">
-                                                        <div class="lms-half-doughnut mt-n3 ms-auto">
+                                                        <div class="lms-half-doughnut mt-n3 ms-auto" id="container_canvas_persentase_banding_pidana_tipikor_tidak_kasasi">
                                                             <canvas style="display: block; box-sizing: border-box; height: 120px; width: 120px;" width="255" height="255" id="chart_persentase_banding_pidana_tipikor_tidak_kasasi" width="400" height="400"></canvas>
                                                             <p class="mb-0 mt-n5 text-center fs-1 fw-medium" id="chart_count_persentase_banding_pidana_tipikor_tidak_kasasi"></p>
                                                         </div>
@@ -842,7 +747,7 @@
                                                             <!-- <span class="fas fa-caret-up me-1"></span>3.5%</span> -->
                                                     </div>
                                                     <div class="col-auto ps-0">
-                                                        <div class="lms-half-doughnut mt-n3 ms-auto">
+                                                        <div class="lms-half-doughnut mt-n3 ms-auto" id="container_canvas_persentase_banding_perdata_tidak_kasasi">
                                                             <canvas style="display: block; box-sizing: border-box; height: 120px; width: 120px;" width="255" height="255" id="chart_persentase_banding_perdata_tidak_kasasi" width="400" height="400"></canvas>
                                                             <p class="mb-0 mt-n5 text-center fs-1 fw-medium" id="chart_count_persentase_banding_perdata_tidak_kasasi"></p>
                                                         </div>
@@ -874,7 +779,7 @@
                                 <div class="row align-items-center">
                                     <div class="col-md-5 col-xxl-12 mb-xxl-1">
                                         <div class="position-relative">
-                                            <div style="width:50%;display:flex;align-items:center;justify-content:center;margin-left:100px;">
+                                            <div style="width:50%;display:flex;align-items:center;justify-content:center;margin-left:100px;" id="container_canvas_persentase_perkara_banding_minutasi">
                                                 <canvas style="display: block; box-sizing: border-box; height: 20px; width: 50px;" id="chart_persentase_perkara_banding_minutasi" width="100" height="100"></canvas>
                                             </div>
                                         </div>
@@ -883,7 +788,7 @@
                                         <hr class="mx-nx1 mb-0 d-md-none d-xxl-block" />
                                         <div class="d-flex flex-between-center border-bottom py-3 pt-md-0 pt-xxl-3">
                                             <div class="d-flex">
-                                                <span class="far fa-chart-bar me-2 text-primary"></span>
+                                                <span class="fas fa-poll me-2 text-primary"></span>
                                                 <h6 class="text-700 mb-0">Total Perkara Banding Minutasi</h6>
                                             </div>
                                             <!-- <p class="fs--1 text-500 mb-0 fw-semi-bold">
@@ -893,21 +798,21 @@
                                         </div>
                                         <div class="d-flex flex-between-center border-bottom py-3">
                                             <div class="d-flex">
-                                                <span class="far fa-chart-bar me-2 text-danger"></span>
+                                                <span class="fas fa-poll me-2 text-danger"></span>
                                                 <h6 class="text-700 mb-0">Pidana</h6>
                                             </div>
                                             <h6 class="text-700 mb-0" id="total-banding-pidana-minutasi-jumlah"></h6>
                                         </div>
                                         <div class="d-flex flex-between-center border-bottom py-3">
                                             <div class="d-flex">
-                                                <span class="far fa-chart-bar me-2 text-success"></span>
+                                                <span class="fas fa-poll me-2 text-success"></span>
                                                 <h6 class="text-700 mb-0">Perdata</h6>
                                             </div>
                                             <h6 class="text-700 mb-0" id="total-banding-perdata-minutasi-jumlah"></h6>
                                         </div>
                                         <div class="d-flex flex-between-center border-bottom py-3 border-bottom-0 pb-0">
                                             <div class="d-flex">
-                                                <span class="far fa-chart-bar me-2 text-warning"></span>
+                                                <span class="fas fa-poll me-2 text-warning"></span>
                                                 <h6 class="text-700 mb-0">Pidana Tipikor</h6>
                                             </div>
                                             <h6 class="text-700 mb-0" id="total-banding-tipikor-minutasi-jumlah"></h6>
@@ -1718,254 +1623,405 @@
     <script type="text/javascript">
         function detail_data_banding() {
             var btn_id = event.target.id;
-            let tahun = $('#tahun').val();
-            window.location = '<?php echo base_url() ?>detail_data_banding_cakap/' + tahun + '/' + btn_id;
+            window.location = '<?php echo base_url() ?>detail_data_banding_cakap/' + $('#tahun').val() + '/' + btn_id;
         }
 
         $(document).ready(() => {
-            let tahun = $('#tahun').val();
+            get_data();
+        })
 
-            return new Promise((resolve, reject) => {
-                $.ajax({
-                    url: '<?php echo base_url() ?>get_data_cakap/' + tahun,
-                    type: 'POST',
-                    dataType: 'JSON',
-                    success: function(data) {
-                        if (data.st == 1) {
-                            for (let index = 0; index < data.data.length; index++) {
-                                if (data.data[index].jenis == 'total_perkara_banding_tahun_ini') {
-                                    $('#total_perkara_tahun_ini').append(data.data[index].value);
-                                } else if (data.data[index].jenis == 'total_perkara_banding_tahun_lalu') {
-                                    $('#total_perkara_tahun_lalu').append(data.data[index].value);
-                                } else if (data.data[index].jenis == 'persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini') {
-                                    $('#persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini').append(data.data[index].value);
-                                } else if (data.data[index].jenis == 'persentase_perkara_banding_diselesaikan_tepat_waktu') {
-                                    $('#persentase_perkara_banding_diselesaikan_tepat_waktu').append(data.data[index].value);
-                                    $('#chart_count_persentase_perkara_banding_diselesaikan_tepat_waktu').append(data.data[index].value);
-                                    $('#detail_persentase_perkara_banding_diselesaikan_tepat_waktu').attr('id', data.data[index].id_statistik);
-                                } else if (data.data[index].jenis == 'total_perkara_banding_diselesaikan_tepat_waktu') {
-                                    var total_perkara_banding_diselesaikan_tepat_waktu = data.data[index].value;
-                                } else if (data.data[index].jenis == 'total_perkara_banding_diselesaikan_tidak_tepat_waktu') {
-                                    var total_perkara_banding_diselesaikan_tidak_tepat_waktu = data.data[index].value;
-                                } else if (data.data[index].jenis == 'persentase_banding_pidana_tidak_kasasi') {
-                                    $('#persentase_banding_pidana_tidak_kasasi').append(data.data[index].value);
-                                    $('#chart_count_persentase_banding_pidana_tidak_kasasi').append(data.data[index].value);
-                                    $('#detail_persentase_banding_pidana_tidak_kasasi').attr('id', data.data[index].id_statistik);
-                                    var persentase_pidana_tidak_kasasi = data.data[index].value;
-                                } else if (data.data[index].jenis == 'total_banding_pidana_tidak_kasasi') {
-                                    var total_pidana_tidak_kasasi = data.data[index].value;
-                                } else if (data.data[index].jenis == 'total_banding_pidana_minutasi') {
-                                    var total_pidana_minutasi = data.data[index].value;
-                                } else if (data.data[index].jenis == 'persentase_banding_pidana_tipikor_tidak_kasasi') {
-                                    $('#persentase_banding_pidana_tipikor_tidak_kasasi').append(data.data[index].value);
-                                    $('#chart_count_persentase_banding_pidana_tipikor_tidak_kasasi').append(data.data[index].value);
-                                    $('#detail_persentase_banding_pidana_tipikor_tidak_kasasi').attr('id', data.data[index].id_statistik);
-                                    var persentase_pidana_tipikor_tidak_kasasi = data.data[index].value;
-                                } else if (data.data[index].jenis == 'total_banding_pidana_tipikor_tidak_kasasi') {
-                                    var total_pidana_tipikor_tidak_kasasi = data.data[index].value;
-                                } else if (data.data[index].jenis == 'total_banding_pidana_tipikor_minutasi') {
-                                    var total_pidana_tipikor_minutasi = data.data[index].value;
-                                } else if (data.data[index].jenis == 'persentase_banding_perdata_tidak_kasasi') {
-                                    $('#persentase_banding_perdata_tidak_kasasi').append(data.data[index].value);
-                                    $('#chart_count_persentase_banding_perdata_tidak_kasasi').append(data.data[index].value);
-                                    $('#detail_persentase_banding_perdata_tidak_kasasi').attr('id', data.data[index].id_statistik);
-                                    var persentase_perdata_tidak_kasasi = data.data[index].value;
-                                } else if (data.data[index].jenis == 'total_banding_perdata_tidak_kasasi') {
-                                    var total_perdata_tidak_kasasi = data.data[index].value;
-                                } else if (data.data[index].jenis == 'total_banding_perdata_minutasi') {
-                                    var total_perdata_minutasi = data.data[index].value;
+        function get_data(params = false) {
+            var data = $.ajax({
+                url: '<?php echo base_url() ?>get_data_cakap/' + $('#tahun').val(),
+                type: 'POST',
+                async: false,
+                dataType: 'JSON',
+                success: function(data) {
+                    if (data.st == 1) {
+                        for (let index = 0; index < data.data.length; index++) {
+                            if (data.data[index].jenis == 'total_perkara_banding_tahun_ini') {
+                                document.getElementById("total_perkara_tahun_ini").innerHTML = '';
+                                var total_perkara_banding_tahun_ini = data.data[index].value;
+                                $('#total_perkara_tahun_ini').append(data.data[index].value);
+                            } else if (data.data[index].jenis == 'total_perkara_banding_tahun_lalu') {
+                                document.getElementById("total_perkara_tahun_lalu").innerHTML = '';
+                                var total_perkara_banding_tahun_lalu = data.data[index].value;
+                                $('#total_perkara_tahun_lalu').append(data.data[index].value);
+                            } else if (data.data[index].jenis == 'persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini') {
+                                document.getElementById("persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini").innerHTML = '';
+                                var persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini = parseFloat(data.data[index].value.replace('%', ''));
+                                $('#persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini').append(data.data[index].value);
+                            } else if (data.data[index].jenis == 'persentase_perkara_banding_diselesaikan_tepat_waktu') {
+                                document.getElementById("persentase_perkara_banding_diselesaikan_tepat_waktu").innerHTML = '';
+                                $('#persentase_perkara_banding_diselesaikan_tepat_waktu').append(data.data[index].value);
+                                document.getElementById("chart_count_persentase_perkara_banding_diselesaikan_tepat_waktu").innerHTML = '';
+                                $('#chart_count_persentase_perkara_banding_diselesaikan_tepat_waktu').append(data.data[index].value);
+                                $('#detail_persentase_perkara_banding_diselesaikan_tepat_waktu').attr('id', data.data[index].id_statistik);
+                            } else if (data.data[index].jenis == 'total_perkara_banding_diselesaikan_tepat_waktu') {
+                                var total_perkara_banding_diselesaikan_tepat_waktu = data.data[index].value;
+                            } else if (data.data[index].jenis == 'total_perkara_banding_diselesaikan_tidak_tepat_waktu') {
+                                var total_perkara_banding_diselesaikan_tidak_tepat_waktu = data.data[index].value;
+                            } else if (data.data[index].jenis == 'persentase_banding_pidana_tidak_kasasi') {
+                                document.getElementById("persentase_banding_pidana_tidak_kasasi").innerHTML = '';
+                                $('#persentase_banding_pidana_tidak_kasasi').append(data.data[index].value);
+                                document.getElementById("chart_count_persentase_banding_pidana_tidak_kasasi").innerHTML = '';
+                                $('#chart_count_persentase_banding_pidana_tidak_kasasi').append(data.data[index].value);
+                                $('#detail_persentase_banding_pidana_tidak_kasasi').attr('id', data.data[index].id_statistik);
+                                var persentase_pidana_tidak_kasasi = data.data[index].value;
+                            } else if (data.data[index].jenis == 'total_banding_pidana_tidak_kasasi') {
+                                var total_pidana_tidak_kasasi = data.data[index].value;
+                            } else if (data.data[index].jenis == 'total_banding_pidana_minutasi') {
+                                var total_pidana_minutasi = data.data[index].value;
+                            } else if (data.data[index].jenis == 'persentase_banding_pidana_tipikor_tidak_kasasi') {
+                                document.getElementById("persentase_banding_pidana_tipikor_tidak_kasasi").innerHTML = '';
+                                $('#persentase_banding_pidana_tipikor_tidak_kasasi').append(data.data[index].value);
+                                document.getElementById("chart_count_persentase_banding_pidana_tipikor_tidak_kasasi").innerHTML = '';
+                                $('#chart_count_persentase_banding_pidana_tipikor_tidak_kasasi').append(data.data[index].value);
+                                $('#detail_persentase_banding_pidana_tipikor_tidak_kasasi').attr('id', data.data[index].id_statistik);
+                                var persentase_pidana_tipikor_tidak_kasasi = data.data[index].value;
+                            } else if (data.data[index].jenis == 'total_banding_pidana_tipikor_tidak_kasasi') {
+                                var total_pidana_tipikor_tidak_kasasi = data.data[index].value;
+                            } else if (data.data[index].jenis == 'total_banding_pidana_tipikor_minutasi') {
+                                var total_pidana_tipikor_minutasi = data.data[index].value;
+                            } else if (data.data[index].jenis == 'persentase_banding_perdata_tidak_kasasi') {
+                                document.getElementById("persentase_banding_perdata_tidak_kasasi").innerHTML = '';
+                                $('#persentase_banding_perdata_tidak_kasasi').append(data.data[index].value);
+                                document.getElementById("chart_count_persentase_banding_perdata_tidak_kasasi").innerHTML = '';
+                                $('#chart_count_persentase_banding_perdata_tidak_kasasi').append(data.data[index].value);
+                                $('#detail_persentase_banding_perdata_tidak_kasasi').attr('id', data.data[index].id_statistik);
+                                var persentase_perdata_tidak_kasasi = data.data[index].value;
+                            } else if (data.data[index].jenis == 'total_banding_perdata_tidak_kasasi') {
+                                var total_perdata_tidak_kasasi = data.data[index].value;
+                            } else if (data.data[index].jenis == 'total_banding_perdata_minutasi') {
+                                var total_perdata_minutasi = data.data[index].value;
+                            }
+
+                            if (data.data_min_1 == null) {
+                                var total_perkara_banding_tahun_min_1 = '-';
+                            } else {
+                                if (data.data_min_1[index].jenis == 'total_perkara_banding_tahun_ini') {
+                                    var total_perkara_banding_tahun_min_1 = data.data_min_1[index].value;
+                                } else if (data.data_min_1[index].jenis == 'total_perkara_banding_tahun_lalu') {
+                                    var total_perkara_banding_tahun_lalu_min_1 = data.data_min_1[index].value;
+                                } else if (data.data_min_1[index].jenis == 'persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini') {
+                                    var persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini_min_1 = parseFloat(data.data_min_1[index].value.replace('%', ''));
                                 }
                             }
 
+                            if (data.data_min_2 == null) {
+                                var total_perkara_banding_tahun_min_2 = '-';
+                            } else {
+                                if (data.data_min_2[index].jenis == 'total_perkara_banding_tahun_ini') {
+                                    var total_perkara_banding_tahun_min_2 = data.data_min_2[index].value;
+                                } else if (data.data_min_2[index].jenis == 'total_perkara_banding_tahun_lalu') {
+                                    var total_perkara_banding_tahun_lalu_min_2 = data.data_min_2[index].value;
+                                } else if (data.data_min_2[index].jenis == 'persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini') {
+                                    var persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini_min_2 = parseFloat(data.data_min_2[index].value.replace('%', ''));
+                                }
+                            }
+
+                            if (data.data_min_3 == null) {
+                                var total_perkara_banding_tahun_min_3 = '-';
+                            } else {
+                                if (data.data_min_3[index].jenis == 'total_perkara_banding_tahun_ini') {
+                                    var total_perkara_banding_tahun_min_3 = data.data_min_3[index].value;
+                                } else if (data.data_min_3[index].jenis == 'total_perkara_banding_tahun_lalu') {
+                                    var total_perkara_banding_tahun_lalu_min_3 = data.data_min_3[index].value;
+                                } else if (data.data_min_3[index].jenis == 'persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini') {
+                                    var persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini_min_3 = parseFloat(data.data_min_3[index].value.replace('%', ''));
+                                }
+                            }
+                        }
+
+                        //chart Perkara per tahun selama 4 tahun terakhir
+                        var year_now = data.tahun_now;
+                        var string_persentase = ((Math.abs(total_perkara_banding_tahun_ini - total_perkara_banding_tahun_min_1) / total_perkara_banding_tahun_min_1) * 100).toFixed(2);
+                        document.getElementById("persentase_peningkatan_perkara_tahun_ini").innerHTML = '';
+                        if (total_perkara_banding_tahun_ini - total_perkara_banding_tahun_min_1 < 0) {
+                            var peningkatan = $('#persentase_peningkatan_perkara_tahun_ini').append('<span class = "fas fa-caret-down me-1" ></span>');
+                            $("#persentase_peningkatan_perkara_tahun_ini").removeClass('badge-subtle-success').addClass('badge-subtle-danger');
+                        } else {
+                            var peningkatan = $('#persentase_peningkatan_perkara_tahun_ini').append('<span class = "fas fa-caret-up me-1" ></span>');
+                            $("#persentase_peningkatan_perkara_tahun_ini").removeClass('badge-subtle-danger').addClass('badge-subtle-success');
+                        }
+                        var peningkatan = $('#persentase_peningkatan_perkara_tahun_ini').append(string_persentase + '%');
+                        var chart_total_perkara_tahun_ini = echarts.init(document.getElementById('chart_total_perkara_tahun_ini'));
+                        var option = {
+                            tooltip: {},
+                            xAxis: {
+                                data: [year_now - 3, year_now - 2, year_now - 1, year_now],
+                                show: false
+                            },
+                            yAxis: {
+                                show: false
+                            },
+                            series: [{
+                                name: 'Jumlah Perkara',
+                                type: 'line',
+                                data: [total_perkara_banding_tahun_min_3, total_perkara_banding_tahun_min_2, total_perkara_banding_tahun_min_1, total_perkara_banding_tahun_ini]
+                            }]
+                        };
+                        chart_total_perkara_tahun_ini.setOption(option);
+
+                        //chart Perkara tahun lalu yang diselesaikan tahun ini per tahun selama 4 tahun terakhir
+                        var year_min_1 = data.tahun_now - 1;
+                        var string_persentase = ((Math.abs(total_perkara_banding_tahun_lalu - total_perkara_banding_tahun_lalu_min_1) / total_perkara_banding_tahun_lalu_min_1) * 100).toFixed(2);
+                        document.getElementById("persentase_peningkatan_perkara_tahun_lalu").innerHTML = '';
+                        if (total_perkara_banding_tahun_lalu - total_perkara_banding_tahun_lalu_min_1 < 0) {
+                            var peningkatan = $('#persentase_peningkatan_perkara_tahun_lalu').append('<span class = "fas fa-caret-down me-1" ></span>');
+                            $("#persentase_peningkatan_perkara_tahun_lalu").removeClass('badge-subtle-success').addClass('badge-subtle-danger');
+                        } else {
+                            var peningkatan = $('#persentase_peningkatan_perkara_tahun_lalu').append('<span class = "fas fa-caret-up me-1" ></span>');
+                            $("#persentase_peningkatan_perkara_tahun_lalu").removeClass('badge-subtle-danger').addClass('badge-subtle-success');
+                        }
+                        var peningkatan = $('#persentase_peningkatan_perkara_tahun_lalu').append(string_persentase + '%');
+                        var chart_total_perkara_tahun_lalu = echarts.init(document.getElementById('chart_total_perkara_tahun_lalu'));
+                        var option = {
+                            tooltip: {},
+                            xAxis: {
+                                data: [year_min_1 - 3, year_min_1 - 2, year_min_1 - 1, year_min_1],
+                                show: false
+                            },
+                            yAxis: {
+                                show: false
+                            },
+                            series: [{
+                                name: 'Jumlah Perkara',
+                                type: 'line',
+                                data: [total_perkara_banding_tahun_lalu_min_3, total_perkara_banding_tahun_lalu_min_2, total_perkara_banding_tahun_lalu_min_1, total_perkara_banding_tahun_lalu]
+                            }]
+                        };
+                        chart_total_perkara_tahun_lalu.setOption(option);
+
+                        //chart Perkara tahun lalu yang diselesaikan tahun ini per tahun selama 4 tahun terakhir
+                        var year_now = data.tahun_now;
+                        var string_persentase = (Math.abs(persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini - persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini_min_1)).toFixed(2);
+                        document.getElementById("persentase_peningkatan_perkara_banding_tahun_lalu_diselesaikan_tahun_ini").innerHTML = '';
+                        if (persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini - persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini_min_1 < 0) {
+                            var peningkatan = $('#persentase_peningkatan_perkara_banding_tahun_lalu_diselesaikan_tahun_ini').append('<span class = "fas fa-caret-down me-1" ></span>');
+                            $("#persentase_peningkatan_perkara_banding_tahun_lalu_diselesaikan_tahun_ini").removeClass('badge-subtle-success').addClass('badge-subtle-danger');
+                        } else {
+                            var peningkatan = $('#persentase_peningkatan_perkara_banding_tahun_lalu_diselesaikan_tahun_ini').append('<span class = "fas fa-caret-up me-1" ></span>');
+                            $("#persentase_peningkatan_perkara_banding_tahun_lalu_diselesaikan_tahun_ini").removeClass('badge-subtle-danger').addClass('badge-subtle-success');
+                        }
+                        var peningkatan = $('#persentase_peningkatan_perkara_banding_tahun_lalu_diselesaikan_tahun_ini').append(string_persentase + '%');
+                        var chart_persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini = echarts.init(document.getElementById('chart_persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini'));
+                        var option = {
+                            tooltip: {},
+                            xAxis: {
+                                data: [year_now - 3, year_now - 2, year_now - 1, year_now],
+                                show: false
+                            },
+                            yAxis: {
+                                show: false
+                            },
+                            series: [{
+                                name: 'Jumlah Perkara',
+                                type: 'line',
+                                data: [persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini_min_3, persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini_min_2, persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini_min_1, persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini]
+                            }]
+                        };
+                        chart_persentase_perkara_banding_tahun_lalu_diselesaikan_tahun_ini.setOption(option);
+
+                        if (total_perdata_minutasi >= 0 && total_pidana_tipikor_minutasi >= 0 && total_pidana_minutasi >= 0) {
+                            document.getElementById("total-banding-minutasi-jumlah").innerHTML = '';
+                            document.getElementById("total-banding-pidana-minutasi-jumlah").innerHTML = '';
+                            document.getElementById("total-banding-perdata-minutasi-jumlah").innerHTML = '';
+                            document.getElementById("total-banding-tipikor-minutasi-jumlah").innerHTML = '';
                             $('#total-banding-minutasi-jumlah').append(parseInt(total_perdata_minutasi) + parseInt(total_pidana_minutasi) + parseInt(total_pidana_tipikor_minutasi));
                             $('#total-banding-pidana-minutasi-jumlah').append(parseInt(total_pidana_minutasi));
                             $('#total-banding-perdata-minutasi-jumlah').append(parseInt(total_perdata_minutasi));
                             $('#total-banding-tipikor-minutasi-jumlah').append(parseInt(total_pidana_tipikor_minutasi));
+                            var chart_persentase_perkara_banding_minutasi = new Chart($('#chart_persentase_perkara_banding_minutasi'), {
+                                type: 'doughnut',
+                                data: {
+                                    datasets: [{
+                                        labels: [
+                                            'Total Banding Tepat Waktu',
+                                            'Total Banding Tidak Tepat Waktu'
+                                        ],
+                                        data: [total_perdata_minutasi, total_pidana_tipikor_minutasi, total_pidana_minutasi],
+                                        backgroundColor: [
+                                            'rgba(45, 196, 79, 1)',
+                                            'rgba(217, 119, 39, 1)',
+                                            'rgba(199, 33, 22, 1)'
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    responsive: true
+                                }
+                            });
+                        }
 
-                            if (total_perkara_banding_diselesaikan_tepat_waktu >= 0 && total_perkara_banding_diselesaikan_tidak_tepat_waktu >= 0) {
-                                var chart_persentase_perkara_banding_minutasi = new Chart($('#chart_persentase_perkara_banding_minutasi'), {
-                                    type: 'doughnut',
-                                    data: {
-                                        datasets: [{
-                                            labels: [
-                                                'Total Banding Tepat Waktu',
-                                                'Total Banding Tidak Tepat Waktu'
-                                            ],
-                                            data: [total_perdata_minutasi, total_pidana_tipikor_minutasi, total_pidana_minutasi],
-                                            backgroundColor: [
-                                                'rgba(11, 138, 18, 1)',
-                                                'rgba(9, 81, 214, 1)',
-                                                'rgba(153, 22, 196, 1)'
-                                            ],
-                                            borderWidth: 1
-                                        }]
+                        if (total_perkara_banding_diselesaikan_tepat_waktu >= 0 && total_perkara_banding_diselesaikan_tidak_tepat_waktu >= 0) {
+                            var chart_persentase_perkara_banding_diselesaikan_tepat_waktu = new Chart($('#chart_persentase_perkara_banding_diselesaikan_tepat_waktu'), {
+                                type: 'doughnut',
+                                data: {
+                                    datasets: [{
+                                        labels: [
+                                            'Total Banding Tepat Waktu',
+                                            'Total Banding Tidak Tepat Waktu'
+                                        ],
+                                        data: [total_perkara_banding_diselesaikan_tepat_waktu, total_perkara_banding_diselesaikan_tidak_tepat_waktu],
+                                        backgroundColor: [
+                                            'rgba(11, 138, 18, 1)',
+                                            'rgba(201, 206, 209, 1)'
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    cutout: 43,
+                                    rotation: -90,
+                                    circumference: 180,
+                                    layout: {
+                                        padding: {
+                                            left: 0,
+                                            right: 0,
+                                            top: 0,
+                                            bottom: 0,
+                                        }
                                     },
-                                    options: {
-                                        responsive: true
-                                    }
-                                });
-                            }
+                                    responsive: true
+                                }
+                            });
+                        }
 
-                            if (total_perkara_banding_diselesaikan_tepat_waktu >= 0 && total_perkara_banding_diselesaikan_tidak_tepat_waktu >= 0) {
-                                var chart_persentase_perkara_banding_diselesaikan_tepat_waktu = new Chart($('#chart_persentase_perkara_banding_diselesaikan_tepat_waktu'), {
-                                    type: 'doughnut',
-                                    data: {
-                                        datasets: [{
-                                            labels: [
-                                                'Total Banding Tepat Waktu',
-                                                'Total Banding Tidak Tepat Waktu'
-                                            ],
-                                            data: [total_perkara_banding_diselesaikan_tepat_waktu, total_perkara_banding_diselesaikan_tidak_tepat_waktu],
-                                            backgroundColor: [
-                                                'rgba(11, 138, 18, 1)',
-                                                'rgba(201, 206, 209, 1)'
-                                            ],
-                                            borderWidth: 1
-                                        }]
+                        if (total_pidana_tidak_kasasi >= 0 && total_pidana_minutasi >= 0) {
+                            var chart_persentase_banding_pidana_tidak_kasasi = new Chart($('#chart_persentase_banding_pidana_tidak_kasasi'), {
+                                type: 'doughnut',
+                                data: {
+                                    datasets: [{
+                                        labels: [
+                                            'Total Pidana Tidak Kasasi',
+                                            'Total Pidana Kasasi'
+                                        ],
+                                        data: [total_pidana_tidak_kasasi, total_pidana_minutasi - total_pidana_tidak_kasasi],
+                                        backgroundColor: [
+                                            'rgba(9, 81, 214, 1)',
+                                            'rgba(201, 206, 209, 1)'
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    cutout: 43,
+                                    rotation: -90,
+                                    circumference: 180,
+                                    layout: {
+                                        padding: {
+                                            left: 0,
+                                            right: 0,
+                                            top: 0,
+                                            bottom: 0,
+                                        }
                                     },
-                                    options: {
-                                        cutout: 43,
-                                        rotation: -90,
-                                        circumference: 180,
-                                        layout: {
-                                            padding: {
-                                                left: 0,
-                                                right: 0,
-                                                top: 0,
-                                                bottom: 0,
-                                            }
-                                        },
-                                        responsive: true
-                                    }
-                                });
-                            }
-
-                            if (total_pidana_tidak_kasasi >= 0 && total_pidana_minutasi >= 0) {
-                                var chart_persentase_banding_pidana_tidak_kasasi = new Chart($('#chart_persentase_banding_pidana_tidak_kasasi'), {
-                                    type: 'doughnut',
-                                    data: {
-                                        datasets: [{
-                                            labels: [
-                                                'Total Pidana Tidak Kasasi',
-                                                'Total Pidana Kasasi'
-                                            ],
-                                            data: [total_pidana_tidak_kasasi, total_pidana_minutasi - total_pidana_tidak_kasasi],
-                                            backgroundColor: [
-                                                'rgba(9, 81, 214, 1)',
-                                                'rgba(201, 206, 209, 1)'
-                                            ],
-                                            borderWidth: 1
-                                        }]
-                                    },
-                                    options: {
-                                        cutout: 43,
-                                        rotation: -90,
-                                        circumference: 180,
-                                        layout: {
-                                            padding: {
-                                                left: 0,
-                                                right: 0,
-                                                top: 0,
-                                                bottom: 0,
-                                            }
-                                        },
-                                        responsive: true
-                                    }
-                                });
-                            }
-
-
-                            if (total_pidana_tipikor_tidak_kasasi >= 0 && total_pidana_tipikor_minutasi >= 0) {
-                                var chart_persentase_banding_pidana_tipikor_tidak_kasasi = new Chart($('#chart_persentase_banding_pidana_tipikor_tidak_kasasi'), {
-                                    type: 'doughnut',
-                                    data: {
-                                        datasets: [{
-                                            labels: [
-                                                'Total Pidana Tipikor Tidak Kasasi',
-                                                'Total Pidana Tipikor Kasasi'
-                                            ],
-                                            data: [total_pidana_tipikor_tidak_kasasi, total_pidana_tipikor_minutasi - total_pidana_tipikor_tidak_kasasi],
-                                            backgroundColor: [
-                                                'rgba(9, 81, 214, 1)',
-                                                'rgba(201, 206, 209, 1)'
-                                            ],
-                                            borderWidth: 1
-                                        }]
-                                    },
-                                    options: {
-                                        cutout: 43,
-                                        rotation: -90,
-                                        circumference: 180,
-                                        layout: {
-                                            padding: {
-                                                left: 0,
-                                                right: 0,
-                                                top: 0,
-                                                bottom: 0,
-                                            }
-                                        },
-                                        responsive: true
-                                    }
-                                });
-                            }
-
-                            if (total_perdata_tidak_kasasi >= 0 && total_perdata_minutasi >= 0) {
-                                var chart_persentase_banding_perdata_tidak_kasasi = new Chart($('#chart_persentase_banding_perdata_tidak_kasasi'), {
-                                    type: 'doughnut',
-                                    data: {
-                                        datasets: [{
-                                            labels: [
-                                                'Total Pidana Tipikor Tidak Kasasi',
-                                                'Total Pidana Tipikor Kasasi'
-                                            ],
-                                            data: [total_perdata_tidak_kasasi, total_perdata_minutasi - total_perdata_tidak_kasasi],
-                                            backgroundColor: [
-                                                'rgba(153, 22, 196, 1)',
-                                                'rgba(201, 206, 209, 1)'
-                                            ],
-                                            borderWidth: 1
-                                        }]
-                                    },
-                                    options: {
-                                        cutout: 43,
-                                        rotation: -90,
-                                        circumference: 180,
-                                        layout: {
-                                            padding: {
-                                                left: 0,
-                                                right: 0,
-                                                top: 0,
-                                                bottom: 0,
-                                            }
-                                        },
-                                        responsive: true
-                                    }
-                                });
-                            }
-
-                        } else {
-                            Swal.fire(
-                                'Oops!',
-                                error.msg,
-                                'error'
-                            );
+                                    responsive: true
+                                }
+                            });
                         }
 
 
-                        resolve(true);
-                    },
-                    error: function(error) {
+                        if (total_pidana_tipikor_tidak_kasasi >= 0 && total_pidana_tipikor_minutasi >= 0) {
+                            var chart_persentase_banding_pidana_tipikor_tidak_kasasi = new Chart($('#chart_persentase_banding_pidana_tipikor_tidak_kasasi'), {
+                                type: 'doughnut',
+                                data: {
+                                    datasets: [{
+                                        labels: [
+                                            'Total Pidana Tipikor Tidak Kasasi',
+                                            'Total Pidana Tipikor Kasasi'
+                                        ],
+                                        data: [total_pidana_tipikor_tidak_kasasi, total_pidana_tipikor_minutasi - total_pidana_tipikor_tidak_kasasi],
+                                        backgroundColor: [
+                                            'rgba(9, 81, 214, 1)',
+                                            'rgba(201, 206, 209, 1)'
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    cutout: 43,
+                                    rotation: -90,
+                                    circumference: 180,
+                                    layout: {
+                                        padding: {
+                                            left: 0,
+                                            right: 0,
+                                            top: 0,
+                                            bottom: 0,
+                                        }
+                                    },
+                                    responsive: true
+                                }
+                            });
+                        }
+
+                        if (total_perdata_tidak_kasasi >= 0 && total_perdata_minutasi >= 0) {
+                            var chart_persentase_banding_perdata_tidak_kasasi = new Chart($('#chart_persentase_banding_perdata_tidak_kasasi'), {
+                                type: 'doughnut',
+                                data: {
+                                    datasets: [{
+                                        labels: [
+                                            'Total Pidana Tipikor Tidak Kasasi',
+                                            'Total Pidana Tipikor Kasasi'
+                                        ],
+                                        data: [total_perdata_tidak_kasasi, total_perdata_minutasi - total_perdata_tidak_kasasi],
+                                        backgroundColor: [
+                                            'rgba(153, 22, 196, 1)',
+                                            'rgba(201, 206, 209, 1)'
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    cutout: 43,
+                                    rotation: -90,
+                                    circumference: 180,
+                                    layout: {
+                                        padding: {
+                                            left: 0,
+                                            right: 0,
+                                            top: 0,
+                                            bottom: 0,
+                                        }
+                                    },
+                                    responsive: true
+                                }
+                            });
+                        }
+
+                    } else {
                         Swal.fire(
                             'Oops!',
                             error.msg,
                             'error'
                         );
-                        reject(false);
                     }
-                })
+                },
+                error: function(error) {
+                    Swal.fire(
+                        'Oops!',
+                        error.msg,
+                        'error'
+                    );
+                }
             })
-
-        })
+        }
+        $('#tahun').on('change', function() {
+            document.getElementById("container_canvas_persentase_perkara_banding_diselesaikan_tepat_waktu").innerHTML = '';
+            $("#container_canvas_persentase_perkara_banding_diselesaikan_tepat_waktu").append('<canvas style="display: block; box-sizing: border-box; height: 120px; width: 120px;" width="255" height="255" id="chart_persentase_perkara_banding_diselesaikan_tepat_waktu" width="400" height="400"></canvas><p class = "mb-0 mt-n5 text-center fs-1 fw-medium" id = "chart_count_persentase_perkara_banding_diselesaikan_tepat_waktu">< /p>')
+            document.getElementById("container_canvas_persentase_banding_pidana_tidak_kasasi").innerHTML = '';
+            $("#container_canvas_persentase_banding_pidana_tidak_kasasi").append('<canvas style="display: block; box-sizing: border-box; height: 120px; width: 120px;" width="255" height="255" id="chart_persentase_banding_pidana_tidak_kasasi" width="400" height="400"></canvas><p class = "mb-0 mt-n5 text-center fs-1 fw-medium" id = "chart_count_persentase_banding_pidana_tidak_kasasi">< /p>')
+            document.getElementById("container_canvas_persentase_banding_perdata_tidak_kasasi").innerHTML = '';
+            $("#container_canvas_persentase_banding_perdata_tidak_kasasi").append('<canvas style="display: block; box-sizing: border-box; height: 120px; width: 120px;" width="255" height="255" id="chart_persentase_banding_perdata_tidak_kasasi" width="400" height="400"></canvas><p class = "mb-0 mt-n5 text-center fs-1 fw-medium" id = "chart_count_persentase_banding_perdata_tidak_kasasi">< /p>')
+            document.getElementById("container_canvas_persentase_banding_pidana_tipikor_tidak_kasasi").innerHTML = '';
+            $("#container_canvas_persentase_banding_pidana_tipikor_tidak_kasasi").append('<canvas style="display: block; box-sizing: border-box; height: 120px; width: 120px;" width="255" height="255" id="chart_persentase_banding_pidana_tipikor_tidak_kasasi" width="400" height="400"></canvas><p class = "mb-0 mt-n5 text-center fs-1 fw-medium" id = "chart_count_persentase_banding_pidana_tipikor_tidak_kasasi">< /p>')
+            document.getElementById("container_canvas_persentase_perkara_banding_minutasi").innerHTML = '';
+            $("#container_canvas_persentase_perkara_banding_minutasi").append('<canvas style="display: block; box-sizing: border-box; height: 20px; width: 50px;" id="chart_persentase_perkara_banding_minutasi" width="100" height="100"></canvas>')
+            get_data();
+        });
     </script>
 
 </body>

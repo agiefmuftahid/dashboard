@@ -610,10 +610,7 @@
                                             </div>
                                             <div class="col-md-auto position-relative">
                                                 <select name="tahun" id="tahun" class="form-select form-select-sm">
-                                                    <option value="2023">2023</option>
-                                                    <option value="2022">2022</option>
-                                                    <option value="2021">2021</option>
-                                                    <option value="2020">2020</option>
+                                                    <?php echo $tahun_opt ?>
                                                 </select>
                                             </div>
                                         </form>
@@ -747,38 +744,43 @@
     <script src="<?php echo base_url(); ?>assets/plugins/dataTables/dataTables.responsive.min.js"></script>
 
     <script type="text/javascript">
-        // $.fn.dataTable.ext.classes.sPageButton = 'px-4 ms-2';
-        let tahun = $('#tahun').val();
-        $('#table-perkara').DataTable({
-            "processing": true,
-            "serverside": true,
-            "bSort": false,
-            "bInfo": false,
-            "paging": true,
-            "responsive": {
-                details: true
-            },
-            "ajax": {
-                "url": "<?php echo base_url() ?>get_data_cakap/" + tahun + "/" + "<?php echo $id_statistik ?>",
-                "type": "POST",
-                "dataFilter": function(data) {
-                    var jsondata = jQuery.parseJSON(data);
-                    if (jsondata.st == 1) {
-                        var ndata = {};
-                        ndata.recordsTotal = jsondata.data.recordsTotal;
-                        ndata.recordsFiltered = jsondata.data.recordsFiltered;
-                        ndata.data = jsondata.data.data;
-                        return JSON.stringify(ndata);
-                    } else {
-                        showNotif('Display Table', jsondata.msg);
+        // $.fn.dataTable.ext.classes.sPageButton = 'px-4 ms-2'
+        $(document).ready(() => {
+            var datatable = $('#table-perkara').DataTable({
+                "processing": true,
+                "serverside": true,
+                "bSort": false,
+                "bInfo": false,
+                "paging": true,
+                "responsive": {
+                    details: true
+                },
+                "ajax": {
+                    "url": "<?php echo base_url() ?>get_data_cakap/" + $('#tahun').val() + "/" + "<?php echo $id_statistik ?>",
+                    "type": "POST",
+                    "dataFilter": function(data) {
+                        var jsondata = jQuery.parseJSON(data);
+                        if (jsondata.st == 1) {
+                            var ndata = {};
+                            ndata.recordsTotal = jsondata.data.recordsTotal;
+                            ndata.recordsFiltered = jsondata.data.recordsFiltered;
+                            ndata.data = jsondata.data.data;
+                            return JSON.stringify(ndata);
+                        } else {
+                            showNotif('Display Table', jsondata.msg);
+                        }
                     }
-                }
-            },
-            "dom": "<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
-                "<'row'<'col-sm-12'tr>>" +
-                "<'row'<'col-sm-1 col-md-1'i><'ml-1'p>>",
-            "initComplete": function(settings, json) {}
-        });
+                },
+                "dom": "<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+                    "<'row'<'col-sm-12'tr>>" +
+                    "<'row'<'col-sm-1 col-md-1'i><'ml-1'p>>",
+                "initComplete": function(settings, json) {}
+            });
+            $('#tahun').on('change', function() {
+                datatable.ajax.url("<?php echo base_url() ?>get_data_cakap/" + $('#tahun').val() + "/" + "<?php echo $id_statistik ?>");
+                datatable.ajax.reload();
+            });
+        })
     </script>
 
 </body>
